@@ -33,6 +33,10 @@ string getUserChoice()
     toLowerCase(choice);
     cout << "You chose " + choice << endl;
     awaitingValidChoice = !isValidChoice(choice);
+    if (awaitingValidChoice) 
+    {
+      cout << "try again" << endl;
+    }
   }
   return choice;
 }
@@ -72,7 +76,7 @@ void compareChoices(string uC, string cC) {
 
 bool askToQuit() 
 {
-  cout << "Press q to quit: " << endl;
+  cout << "Press q to quit or any other key to keep playing: " << endl;
   string choice;
   cin >> choice;
   return toLowerCase(choice) == "q";
@@ -80,16 +84,31 @@ bool askToQuit()
 
 void check4GameOver()
 {
-  if (wins > 2 || losses > 2 || ties > 2) {
-    cout << "GAME OVER!" << endl;
+  if (wins == 3 || losses == 3 || ties == 3) {
+    string result;
+    if (wins == 3)
+      result = "WON";
+    else if (ties == 3)
+      result = "TIED";
+    else
+      result = "LOST";
+    cout << "GAME OVER! YOU " << result << "!" << endl;
     bool shouldQuit = askToQuit();
     if (shouldQuit) 
+    {
       gameOver = true;
+      cout << "See ya!" << endl;
+    }
+    else
+    {
+      cout << "Keep on rockin'!" << endl;
+    }
   }
 }
 
 void rpsRound() 
 {
+  cout << "!!! ROUND " << numRounds << " !!!" << endl;
   string uC = getUserChoice();
   string cC = getComputerChoice();
   compareChoices(uC, cC);
@@ -102,6 +121,5 @@ main()
   {
     rpsRound();
   }
-  cout << "Bye!";
   return 0;
 }

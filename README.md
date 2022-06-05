@@ -3,7 +3,7 @@ A simple Rock Paper Scissors game, while learning c++.
 
 ## DEVELOPMENT
 * A C++ Compiler
-* [Make][https://www.gnu.org/software/make/)
+* [Make](https://www.gnu.org/software/make/)
 
 ### COMPILE
 
