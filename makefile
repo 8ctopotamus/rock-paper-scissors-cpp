@@ -10,4 +10,4 @@ clean:
 	$(RM) *.o *.d $(TARGET)
 
 run:
-	$(TARGET)
+	./$(TARGET)

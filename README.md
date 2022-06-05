@@ -3,7 +3,7 @@ A simple Rock Paper Scissors game, while learning c++.
 
 ## DEVELOPMENT
 * A C++ Compiler
-* [Make](https://www.gnu.org/software/make/)
+* [Make][https://www.gnu.org/software/make/)
 
 ### COMPILE
 
@@ -14,4 +14,7 @@ To build and run executable:
 `make run`
 
 ### More about `makefile`
-https://stackoverflow.com/questions/2481269/how-to-make-a-simple-c-makefile
+
+## Notes
+* [More about Makefile](https://stackoverflow.com/questions/2481269/how-to-make-a-simple-c-makefile)
+* [Sleep example](https://www.poftut.com/what-is-sleep-function-and-how-to-use-it-in-c-program/)
