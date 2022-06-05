@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include "lib/game.h"
+#include "lib/player.h"
 
 using namespace std;
 
@@ -117,6 +119,9 @@ void rpsRound()
 
 main()
 {
+  Game game;
+  game.test();
+
   while (!gameOver) 
   {
     rpsRound();
