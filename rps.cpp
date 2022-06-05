@@ -45,35 +45,62 @@ string getComputerChoice()
   return choice;
 }
 
-bool askToQuit() {
+// compare choices and update score
+void compareChoices(string uC, string cC) {
+  string result;
+  if ( 
+    uC == "r" && cC == "s" ||
+    uC == "p" && cC == "r" ||
+    uC == "s" && cC == "p" 
+  ) 
+  {
+    wins++;
+    result = "won";
+  } else if (uC == cC)
+  {
+    ties++;
+    result = "tied";
+  } else 
+  {
+    losses++;
+    result = "lost";
+  }
+  cout << "Round " << result << "!" << endl;
+  printf("Score: WINS: %i | TIES: %i | LOSSES: %i\n", wins, ties, losses);
+  numRounds++;
+}
+
+bool askToQuit() 
+{
   cout << "Press q to quit: " << endl;
   string choice;
   cin >> choice;
-  if (toLowerCase(choice) == "q")
-  {
-    return true;
-  }
-  return false;
+  return toLowerCase(choice) == "q";
 }
 
-bool rpsRound() 
+void check4GameOver()
+{
+  if (wins > 2 || losses > 2 || ties > 2) {
+    cout << "GAME OVER!" << endl;
+    bool shouldQuit = askToQuit();
+    if (shouldQuit) 
+      gameOver = true;
+  }
+}
+
+void rpsRound() 
 {
   string uC = getUserChoice();
   string cC = getComputerChoice();
-  // compare choices
-  // update score
-  // check 4 gameover
-  numRounds++;
-  bool shouldQuit = askToQuit();
-  if (shouldQuit) return true;
-  return false;
+  compareChoices(uC, cC);
+  check4GameOver();
 }
 
 main()
 {
   while (!gameOver) 
   {
-    gameOver = rpsRound();
+    rpsRound();
   }
   cout << "Bye!";
   return 0;
