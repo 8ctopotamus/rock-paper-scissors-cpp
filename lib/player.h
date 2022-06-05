@@ -2,9 +2,9 @@
 
 using namespace std;
 
-class Game {
+class Player {
   public:
     static void test() {
-      cout << "Game test!" << endl;
+      cout << "Player test!" << endl;
     }
 };
