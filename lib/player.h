@@ -10,7 +10,8 @@ class Player {
     string choice;
     int lives = 3;
 
-    Player(string n, bool h) {
+    Player(string n, bool h) 
+    {
       name = n;
       isHuman = h;
     }
